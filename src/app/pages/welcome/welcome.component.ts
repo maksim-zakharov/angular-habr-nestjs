@@ -9,12 +9,7 @@ import { share } from 'rxjs/operators';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  items$: Observable<Item[]> = of([
-    {name: 'Вася', age: 24, address: 'Москва'},
-    {name: 'Петя', age: 23, address: 'Лондон'},
-    {name: 'Миша', age: 21, address: 'Париж'},
-    {name: 'Вова', age: 23, address: 'Сидней'}
-  ]);
+  items$: Observable<Item[]> = this.getItems();
 
   constructor(private http: HttpClient) {
   }
