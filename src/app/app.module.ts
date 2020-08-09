@@ -13,6 +13,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { ru_RU } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import ru from '@angular/common/locales/ru';
+import {TransferHttpCacheModule} from '@nguniversal/common';
 
 registerLocaleData(ru);
 
@@ -22,6 +23,7 @@ registerLocaleData(ru);
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    TransferHttpCacheModule,
     AppRoutingModule,
     IconsProviderModule,
     NzLayoutModule,

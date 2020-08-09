@@ -9,7 +9,7 @@ import { share } from 'rxjs/operators';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  items$: Observable<Item[]> = this.getItems();
+  items$: Observable<Item[]> = this.getItems(); // прикрутили вызов бэка
 
   constructor(private http: HttpClient) {
   }
@@ -18,7 +18,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   getItems(): Observable<Item[]> {
-    return this.http.get<Item[]>('/api/items').pipe(share());
+    return this.http.get<Item[]>('http://localhost:4200/api/items').pipe(share()); // Прописали полный путь к апихе чтобы SSR не ругался
   }
 }
 
